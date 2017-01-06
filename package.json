@@ -1,0 +1,17 @@
+{
+  "name": "webrtc",
+  "version": "1.0.0",
+  "description": "video chat with js",
+  "main": "index.js",
+  "dependencies": {
+    "simple-peer": "^6.1.0"
+  },
+  "devDependencies": {
+    "budo": "^9.4.1"
+  },
+  "scripts": {
+    "start": "budo index.js:bundle.js"
+  },
+  "author": "saadna",
+  "license": "ISC"
+}
