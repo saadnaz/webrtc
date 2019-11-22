@@ -18,5 +18,31 @@
 
 
 <script src="bundle.js" charset="utf-8"></script>
+<script>
+    window.addEventListener("DOMContentLoaded", (event) => {
+    console.log("DOM entièrement chargé et analysé");
+    const url = "http://localhost:8899/api/upload/logo";
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRhdGE0QGluc3Rhd2VibHkuY29tIiwidXNlcklkIjoiNWRkNjUyZjhmMjBjMDYwZmRlZTE5ZDZiIiwiYWRtaW4iOmZhbHNlLCJ3YWl0aW5nIjpmYWxzZSwiaWF0IjoxNTc0NzU5MDEzLCJleHAiOjE1NzQ3NTkzMTN9.wHhhBs383ktrs6pH7sGnziZitcDHlwHxtBmGs7JMT6A'
+    const bearer = 'Bearer ' + token;
+    fetch(url, {
+        method: 'GET',
+        withCredentials: true,
+        headers: {
+            'Authorization': bearer,
+        }
+    }).then((response) => {
+        return response.blob();
+    })
+    .then((myBlob) => {
+        const objectURL = URL.createObjectURL(myBlob);
+        const img = document.getElementById('myimg');
+        img.src = objectURL;
+    })
+    .catch((error) => {
+        console.log('error---', error);
+    })
+});
+</script>
+<img id='myimg' src="#">
 </body>
 </html>
