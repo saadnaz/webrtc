@@ -7,7 +7,7 @@
     "simple-peer": "^6.1.0"
   },
   "devDependencies": {
-    "budo": "^9.4.1"
+    "budo": "^11.8.4"
   },
   "scripts": {
     "start": "budo index.js:bundle.js"
